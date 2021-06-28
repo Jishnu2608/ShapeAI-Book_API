@@ -106,6 +106,9 @@ booky.get("/publications",(req,res) => {
     return res.json({publications: database.publications});
 });
 
+//for works other than GET use "POSTMAN APP"
+
+
 /* 
 Route           /book/add
 Description     add new book
@@ -165,7 +168,6 @@ Methods         PUT
 booky.put("/book/update/author/:ISBN/:authorId",(req,res) => {
     //update book database
     
-
     database.books.forEach((book) => {
         if(book.ISBN ===req.params.ISBN) {
             return book.author.push(parseInt(req.params.authorId));
@@ -181,6 +183,15 @@ booky.put("/book/update/author/:ISBN/:authorId",(req,res) => {
 
     return res.json({books:database.books, author: database.author});
 });
+
+/* 
+Route           /book/update/author
+Description     update/add new author for a book
+Access          public
+Parameter       ISBN
+Methods         PUT
+*/
+
 
 
 booky.listen(3000, () => console.log("The server is running"));
