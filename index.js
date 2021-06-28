@@ -153,4 +153,34 @@ booky.put("/book/update/title/:ISBN",(req,res) => {
     });
     return res.json({books:database.books});
 });
+
+/* 
+Route           /book/update/author
+Description     update/add new author for a book
+Access          public
+Parameter       ISBN
+Methods         PUT
+*/
+
+booky.put("/book/update/author/:ISBN/:authorId",(req,res) => {
+    //update book database
+    
+
+    database.books.forEach((book) => {
+        if(book.ISBN ===req.params.ISBN) {
+            return book.author.push(parseInt(req.params.authorId));
+        }
+    });
+
+    //update author database
+
+    database.author.forEach((author) => {
+        if(author.id ===parseInt(req.params.authorId) )
+            return author.books.push(req.params.ISBN);
+    });
+
+    return res.json({books:database.books, author: database.author});
+});
+
+
 booky.listen(3000, () => console.log("The server is running"));
