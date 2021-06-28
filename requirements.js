@@ -17,6 +17,17 @@
 // To get specific books
 // To get list of books based on category
 
+//POST
+//Add new book
+
+//PUT
+//Update book title
+//Update/add new author
+
+//DELETE
+//delete a book
+//delete an author
+
 //Authors
 
 //We need an API
