@@ -24,7 +24,7 @@ console.log(process.env.MONGO_URL);
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
-    useUnifiedopology: true,
+    useUnifiedTopology: true,
     useFindAndModify: false,
     useCreateIndex: true,
   })
