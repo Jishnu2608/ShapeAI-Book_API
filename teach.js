@@ -16,6 +16,6 @@ Arrays
 $push
 $pop -> remove an element from end
 $pull -> remove element from middle
-$addToSet -> 
+$addToSet -> clever way to put data into an array
 
 */
